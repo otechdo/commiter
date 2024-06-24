@@ -119,7 +119,9 @@ fn clear() {
 }
 
 fn prepare_commit() {
-    let mut commit_types = ["wip", "init", "temp", "hotfix", "spike"];
+    let mut commit_types = [
+        "wip", "init", "temp", "hotfix", "spike", "feat", "fix", "hotfix",
+    ];
     commit_types.sort_unstable();
     let t = Select::new("Select a commit type : ", commit_types.to_vec())
         .prompt()
@@ -141,12 +143,43 @@ fn quit() -> bool {
         .unwrap()
 }
 
+fn send() {
+    if Confirm::new("Send to remotes ? ")
+        .with_default(false)
+        .prompt()
+        .unwrap()
+        .eq(&true)
+    {
+        assert!(Command::new("git")
+            .arg("push")
+            .arg("origin")
+            .arg("--all")
+            .current_dir(".")
+            .spawn()
+            .unwrap()
+            .wait()
+            .unwrap()
+            .success());
+        assert!(Command::new("git")
+            .arg("push")
+            .arg("origin")
+            .arg("--tags")
+            .current_dir(".")
+            .spawn()
+            .unwrap()
+            .wait()
+            .unwrap()
+            .success());
+    }
+}
+
 fn main() {
     loop {
         fmt();
         if zuu() {
             diff();
             prepare_commit();
+            send();
             if quit() {
                 break;
             }
