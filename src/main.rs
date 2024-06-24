@@ -1,9 +1,8 @@
 #![allow(clippy::multiple_crate_versions)]
 
+use inquire::{Confirm, Select, Text};
 use std::env::consts::OS;
 use std::process::Command;
-
-use inquire::{Confirm, Select, Text};
 
 fn commit(m: &str) {
     assert!(Command::new("git")
@@ -202,13 +201,20 @@ fn prepare_commit() {
     let t = Select::new("Select a commit type : ", commit_types().to_vec())
         .prompt()
         .unwrap();
+
+    let s = Text::new("Please enter the commit scope : ")
+        .prompt()
+        .unwrap();
+    if s.is_empty() {
+        prepare_commit();
+    }
     let message = Text::new("Please enter the commit message: ")
         .prompt()
         .unwrap();
     if message.is_empty() {
         prepare_commit();
     }
-    let c = format!("{t}: {}", message.to_lowercase().replace('.', ""));
+    let c = format!("{t})({s}): {}", message.to_lowercase().replace('.', ""));
     commit(c.as_str());
 }
 
