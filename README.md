@@ -26,12 +26,10 @@ commiter
 <type>(<scope>): <short summary>
   │       │             │
   │       │             └─ Summary in present tense. Not capitalized. No period at the end.
-  │       │
-  │       └─ Commit Scope: animations|bazel|benchpress|common|compiler|compiler-cli|core|
-  │                          elements|forms|http|language-service|localize|platform-browser|
-  │                          platform-browser-dynamic|platform-server|router|service-worker|
-  │                          upgrade|zone.js|packaging|changelog|docs-infra|migrations|
-  │                          devtools
+  │       │   
+  │       └─ Commit Scope: auth|email-template|devops|localization|api|logging|navigation|middleware|service|
+  │                         model|view|controllers|subscription|cli|ui|ux|seo|deps|lang|theme|perf|search|
+  │                         payment|forms|design|router|db
   │
-  └─ Commit Type: build|ci|docs|feat|fix|perf|refactor|test
+  └─ Commit Type: build|ci|docs|improve|feat|fix|perf|refactor|test|e2e
 ```
