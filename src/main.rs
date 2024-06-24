@@ -118,7 +118,7 @@ fn clear() {
     }
 }
 
-fn commit_types() -> [&'static str; 72] {
+fn commit_types() -> [&'static str; 56] {
     let mut x = [
         "Star",
         "Comet",
@@ -152,6 +152,7 @@ fn commit_types() -> [&'static str; 72] {
         "Terraform",
         "Interstellar Communication",
         "Hyperspace",
+        "Cosmic Microwave Background",
         "Jump",
         "Stargate",
         "Prime",
@@ -171,7 +172,9 @@ fn commit_types() -> [&'static str; 72] {
         "Singularity",
         "Quantum Entanglement",
         "Dark Matter",
+        "Slingshot Maneuver",
         "Gravitational Lensing",
+        "Gravitational Wave",
         "Time Dilation",
     ];
     x.sort_unstable();
