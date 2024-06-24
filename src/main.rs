@@ -214,7 +214,7 @@ fn prepare_commit() {
     if message.is_empty() {
         prepare_commit();
     }
-    let c = format!("{t})({s}): {}", message.to_lowercase().replace('.', ""));
+    let c = format!("{t}({s}): {}", message.to_lowercase().replace('.', ""));
     commit(c.as_str());
 }
 
