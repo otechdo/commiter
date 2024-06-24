@@ -1,8 +1,9 @@
 #![allow(clippy::multiple_crate_versions)]
 
-use inquire::{Confirm, Select, Text};
 use std::env::consts::OS;
 use std::process::Command;
+
+use inquire::{Confirm, Select, Text};
 
 fn commit(m: &str) {
     assert!(Command::new("git")
@@ -119,34 +120,65 @@ fn clear() {
 }
 
 fn prepare_commit() {
-    let mut commit_types = [
-        "ui", "ux", "i18n", "a11y", "security", "rename", "remove", "branding", "poc", "mvp",
-        "wip", "init", "temp", "lint", "seo", "release", "epic", "compat", "db", "legal", "infra",
-        "rfc", "design", "spike", "perf", "ui", "feat", "fix", "hotfix",
+    let mut scopes = [
+        "auth",
+        "email-template",
+        "devops",
+        "localization",
+        "api",
+        "logging",
+        "navigation",
+        "middleware",
+        "service",
+        "model",
+        "view",
+        "controllers",
+        "subscription",
+        "cli",
+        "lang",
+        "theme",
+        "perf",
+        "search",
+        "payment",
+        "deps",
+        "forms",
+        "design",
+        "seo",
+        "ui",
+        "ux",
+        "router",
+        "db",
     ];
+    let mut commit_types = [
+        "build", "ci", "docs", "improve", "feat", "fix", "perf", "refactor", "test", "e2e",
+    ];
+    scopes.sort_unstable();
     commit_types.sort_unstable();
     let t = Select::new("Select a commit type : ", commit_types.to_vec())
         .prompt()
         .unwrap();
-    let message = Text::new("Please enter the commit message : ")
+    let s = Select::new("Select a commit scope : ", scopes.to_vec())
+        .prompt()
+        .unwrap();
+    let message = Text::new("Please enter the commit message: ")
         .prompt()
         .unwrap();
     if message.is_empty() {
         prepare_commit();
     }
-    let c = format!("{t}: {message}");
+    let c = format!("{t}({s}): {}", message.to_lowercase().replace('.', ""));
     commit(c.as_str());
 }
 
 fn quit() -> bool {
-    Confirm::new("Quit commiter ? ")
+    Confirm::new("Quit commiter ?")
         .with_default(false)
         .prompt()
         .unwrap()
 }
 
 fn send() {
-    if Confirm::new("Send to remotes ? ")
+    if Confirm::new("Send to remotes ?")
         .with_default(false)
         .prompt()
         .unwrap()
