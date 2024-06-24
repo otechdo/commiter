@@ -20,25 +20,25 @@ commiter
 
 # Commit Message Format
 
-## Commit Message Header
-
 ```
 <type>(<scope>): <short summary>
   │       │             │
   │       │             └─  Summary in present tense. Not capitalized. No period at the end.
   │       │   
-  │       └─ Commit Scope:  auth|email-template|devops|localization|api|logging|navigation|middleware|service|
-  │                         model|view|controllers|subscription|cli|ui|ux|seo|deps|lang|theme|perf|search|
-  │                         payment|forms|design|router|db|lib|exe|main|perf
+  │       └─ Commit Scope: The scope of the commit free
   │
-  └─ Commit Type    Star|Comet|Nebula|Pulsar|Quasar|Asteroid Belt|Solar Flare|Dwarf Planet|Supermassive Black Hole|  
-                    Eclipse|Supernova|Red Giant|White Dwarf|Neutron Star|Black Hole|Wormhole|Solar Wind|
-                    Lunar Eclipse|Cosmic Microwave Background|Gravitational Wave|Event Horizon|Big Bang|Launch|Probe|Slingshot Maneuver|Wormhole|
-                    Lightspeed|Mission Control|Spacewalk|Moon Landing|First Contact|Terraform|Interstellar Communication|UFO|Houston, We Have a Problem|E.T. Phone Home|
-                    Warp Speed|Space Junk|Houston, We Have a Solution|Alien Technology|May the Force Be With You|Celestial Dance|
-                    Cosmic Symphony|Stardust Whispers|Nebula's Embrace|Stellar Nursery|Quantum Leap|Cosmic Alignment|Warp Drive|Hyperspace Jump|First Contact|
-                    Stargate|Prime Directive|Holo deck Simulation|Replicator|Cosmic Dawn|Galactic Harmony|Solar Wind|
-                    Lunar Eclipse|Stellar Evolution|Nebula's Breath|Red shift|Blue shift|Parallax|Accretion Disk|Singularity| 
+  └─ Commit Type    Star|Comet|Nebula|Pulsar|Quasar|Asteroid Belt|Solar Flare|Dwarf Planet|
+                    Supermassive Black Hole|Eclipse|Supernova|Red Giant|White Dwarf|
+                    Neutron Star|Black Hole|Wormhole|Solar Wind|Lunar Eclipse|Cosmic Microwave Background|
+                    Gravitational Wave|Event Horizon|Big Bang|Launch|Probe|Slingshot Maneuver|Wormhole|
+                    Lightspeed|Mission Control|Spacewalk|Moon Landing|First Contact|Terraform|
+                    Interstellar Communication|UFO|Houston, We Have a Problem|E.T. Phone Home|
+                    Warp Speed|Space Junk|Houston, We Have a Solution|Alien Technology|
+                    May the Force Be With You|Celestial Dance|Cosmic Symphony|Stardust Whispers|
+                    Nebula's Embrace|Stellar Nursery|Quantum Leap|Cosmic Alignment|Warp Drive|
+                    Hyperspace Jump|First Contact|Stargate|Prime Directive|Holo deck Simulation|
+                    Replicator|Cosmic Dawn|Galactic Harmony|Solar Wind|Lunar Eclipse|Stellar Evolution|
+                    Nebula's Breath|Red shift|Blue shift|Parallax|Accretion Disk|Singularity|
                     Quantum Entanglement|Dark Matter|Gravitational Lensing|Time Dilation
 ```
 
@@ -90,7 +90,7 @@ commiter
 * **Space Junk:** Removes unused code, files, or dependencies.
 * **Houston, We Have a Solution:** Fixes a previously reported problem.
 * **Alien Technology:** Integrates a new and innovative library or tool.
-* **May the Force (Push) Be With You:** Deploys code to production.
+* **May the Force Be With You:** Deploys code to production.
 
 **Poetic and Metaphorical:**
 
@@ -105,7 +105,7 @@ commiter
 * **Warp Drive:** Acceleration of development.
 * **Hyperspace Jump:** Transition to a new project phase or technology.
 * **First Contact:** Communication with an external system.
-* **Terra forming:** Major infrastructure change.
+* **Terraform:** Major infrastructure change.
 * **Stargate:** Creation of a portal to a new feature or service.
 * **Prime Directive:** Adherence to development best practices.
 * **Holo deck Simulation:** Creation of a virtual test environment.
