@@ -120,7 +120,9 @@ fn clear() {
 
 fn prepare_commit() {
     let mut commit_types = [
-        "wip", "init", "temp", "hotfix", "spike", "feat", "fix", "hotfix",
+        "ui", "ux", "i18n", "a11y", "security", "rename", "remove", "branding", "poc", "mvp",
+        "wip", "init", "temp", "hotfix", "lint", "seo", "release", "epic", "compat", "db", "legal",
+        "infra", "rfc", "design", "spike", "perf", "ui", "feat", "fix", "hotfix",
     ];
     commit_types.sort_unstable();
     let t = Select::new("Select a commit type : ", commit_types.to_vec())
