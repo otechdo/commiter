@@ -2,7 +2,7 @@
 name = "commiter"
 version = "0.1.0"
 edition = "2021"
-license = "GPL-3"
+license-file = "LICENSE"
 repository = "https://github.com/otechdo/commiter"
 categories = ["development-tools"]
 description = "A rust program to ensure the rust bin or lib commit quality"
