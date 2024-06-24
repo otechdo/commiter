@@ -219,5 +219,5 @@ fn main() {
             }
         }
     }
-    println!("bye");
+    println!("Bye");
 }
