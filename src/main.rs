@@ -313,13 +313,13 @@ fn prepare_commit() {
     let c: String = if help {
         let x: Vec<&str> = t.split(':').collect();
         format!(
-            "{}({s}): {}\n\n{body}\n\n{footer}\n",
+            "{}({s}): {}\n{body}\n{footer}\n",
             x.first().unwrap(),
             summary.to_lowercase().replace('.', "")
         )
     } else {
         format!(
-            "{t}({s}): {}\n\n{body}\n\n{footer}\n",
+            "{t}({s}): {}\n{body}\n{footer}\n",
             summary.to_lowercase().replace('.', "")
         )
     };
