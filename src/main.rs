@@ -393,7 +393,9 @@ fn main() {
             diff();
             prepare_commit();
             send();
-            publish();
+            if Path::new("Cargo.toml").exists() {
+                publish();
+            }
             if quit() {
                 break;
             }
