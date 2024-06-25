@@ -222,6 +222,7 @@ fn fmt() {
 
 fn zuu() -> bool {
     if Path::new("Cargo.toml").exists() {
+        fmt();
         if Command::new("zuu")
             .current_dir(".")
             .spawn()
@@ -388,7 +389,6 @@ fn send() {
 
 fn main() {
     loop {
-        fmt();
         if zuu() {
             diff();
             prepare_commit();
