@@ -1,11 +1,11 @@
 [package]
 name = "commiter"
-version = "1.1.0"
+version = "1.2.0"
 edition = "2021"
 license-file = "LICENSE"
 repository = "https://github.com/otechdo/commiter"
 categories = ["development-tools"]
-description = "A rust program to ensure the rust bin or lib commit quality"
+description = "A rust program to ensure the quality of commit"
 keywords = ["git", "zuu", "commit", "quality", "rust"]
 readme = "README.md"
 [dependencies]

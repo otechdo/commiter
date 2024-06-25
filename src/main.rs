@@ -1,6 +1,7 @@
 #![allow(clippy::multiple_crate_versions)]
 
 use std::env::consts::OS;
+use std::path::Path;
 use std::process::Command;
 
 use inquire::{Confirm, Select, Text};
@@ -220,26 +221,30 @@ fn fmt() {
 }
 
 fn zuu() -> bool {
-    if Command::new("zuu")
-        .current_dir(".")
-        .spawn()
-        .unwrap()
-        .wait()
-        .unwrap()
-        .success()
-    {
-        clear();
-        return true;
-    }
-    if Confirm::new("Check the code again ? ")
-        .with_default(true)
-        .prompt()
-        .unwrap()
-        .eq(&true)
-    {
+    if Path::new("Cargo.toml").exists() {
+        if Command::new("zuu")
+            .current_dir(".")
+            .spawn()
+            .unwrap()
+            .wait()
+            .unwrap()
+            .success()
+        {
+            clear();
+            return true;
+        }
+        if Confirm::new("Check the code again ? ")
+            .with_default(true)
+            .prompt()
+            .unwrap()
+            .eq(&true)
+        {
+            return false;
+        }
         return false;
     }
-    false
+    clear();
+    true
 }
 
 fn clear() {
