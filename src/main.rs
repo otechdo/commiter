@@ -388,6 +388,16 @@ fn send() {
 }
 
 fn main() {
+    if Path::new(".git").exists().eq(&false) {
+        assert!(Command::new("git")
+            .arg("init")
+            .current_dir(".")
+            .spawn()
+            .unwrap()
+            .wait()
+            .unwrap()
+            .success());
+    }
     loop {
         if zuu() {
             diff();
